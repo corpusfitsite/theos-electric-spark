@@ -3,27 +3,21 @@ version: '3.8'
 
 services:
   th-eletricista:
-    build: 
-      context: .
-      target: production
+    build: .
     ports:
-      - "8080:8080"
+      - process.env.PORT
     environment:
       - NODE_ENV=production
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
 
   th-eletricista-dev:
     build:
       context: .
       target: builder
     ports:
-      - "5173:5173"
+      - process.env.PORT
     environment:
       - NODE_ENV=development
     volumes:
