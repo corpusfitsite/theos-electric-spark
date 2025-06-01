@@ -5,7 +5,7 @@ services:
   th-eletricista:
     build: .
     ports:
-      - process.env.PORT
+      - "${PORT:-80}:80"
     environment:
       - NODE_ENV=production
     volumes:
