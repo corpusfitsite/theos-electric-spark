@@ -12,6 +12,7 @@ Site profissional para divulgação dos serviços elétricos de Theobaldo Cordei
 - **Shadcn/ui** - Componentes de interface elegantes e acessíveis
 - **Lucide React** - Ícones modernos e consistentes
 - **Docker** - Containerização para deploy
+- **Nginx** - Servidor web otimizado para produção
 
 ## 📋 Funcionalidades
 
@@ -23,6 +24,8 @@ Site profissional para divulgação dos serviços elétricos de Theobaldo Cordei
 - ✅ **Informações de Contato** - Telefone, WhatsApp, e-mail
 - ✅ **Design Profissional** - Visual moderno e confiável
 - ✅ **SEO Otimizado** - Meta tags e estrutura semântica
+- ✅ **Performance Otimizada** - Lazy loading, compressão, cache
+- ✅ **Segurança** - Headers de segurança configurados
 
 ## 🛠️ Desenvolvimento Local
 
@@ -30,6 +33,7 @@ Site profissional para divulgação dos serviços elétricos de Theobaldo Cordei
 
 - Node.js 18+ e npm
 - Git
+- Docker (opcional)
 
 ### Instalação
 
@@ -45,7 +49,7 @@ npm install
 npm run dev
 ```
 
-O site estará disponível em `http://localhost:5173`
+O site estará disponível em `http://localhost:8080`
 
 ## 🐳 Docker
 
@@ -56,7 +60,7 @@ O site estará disponível em `http://localhost:5173`
 docker build -t th-eletricista .
 
 # Execução do container
-docker run -p 3000:80 th-eletricista
+docker run -p 8080:8080 th-eletricista
 ```
 
 ### Usando Docker Compose
@@ -69,19 +73,72 @@ docker-compose up th-eletricista-dev
 docker-compose up th-eletricista
 ```
 
-## 📦 Deploy
+## 🌐 Deploy no Render
 
-### Build para produção
+### Deploy Automático
+
+1. **Conecte seu repositório GitHub ao Render:**
+   - Acesse [render.com](https://render.com)
+   - Clique em "New +" → "Web Service"
+   - Conecte sua conta GitHub
+   - Selecione este repositório
+
+2. **Configurações do Deploy:**
+   - **Environment**: `Docker`
+   - **Build Command**: `docker build -t th-eletricista .`
+   - **Start Command**: `docker run -p 8080:8080 th-eletricista`
+   - **Port**: `8080`
+
+3. **Variáveis de Ambiente:**
+   ```
+   NODE_ENV=production
+   ```
+
+4. **Deploy automático:**
+   - Ative "Auto-Deploy" para deploys automáticos a cada push
+   - O site será acessível em: `https://seu-app.onrender.com`
+
+### Deploy Manual
 
 ```bash
+# Build para produção
 npm run build
+
+# Build da imagem Docker
+docker build -t th-eletricista .
+
+# Deploy usando Render CLI (opcional)
+render deploy
 ```
 
-Os arquivos de produção serão gerados na pasta `dist/`.
+### Configuração com render.yaml
 
-### Deploy com Docker
+O projeto inclui um arquivo `render.yaml` para configuração automática:
 
-O projeto está configurado para deploy usando Docker com Nginx. O Dockerfile multi-stage otimiza o tamanho da imagem final.
+```yaml
+services:
+  - type: web
+    name: th-eletricista
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+```
+
+## 📦 Otimizações de Performance
+
+- **Compressão Gzip** - Reduz tamanho dos arquivos
+- **Cache Headers** - Otimiza carregamento de assets
+- **Code Splitting** - Carregamento otimizado de chunks
+- **Minificação** - Reduz tamanho dos arquivos finais
+- **Lazy Loading** - Carrega componentes sob demanda
+
+## 🔒 Segurança
+
+- **Content Security Policy** - Previne ataques XSS
+- **Security Headers** - Headers de segurança configurados
+- **HTTPS Redirect** - Redirecionamento automático para HTTPS
+- **User não-root** - Container executa com usuário limitado
 
 ## 🎨 Personalização
 
@@ -120,6 +177,12 @@ npm run preview    # Preview do build
 npm run lint       # Verificação de código
 ```
 
+## 🚀 Monitoramento
+
+- **Health Check**: Endpoint `/health` para verificação de status
+- **Logs**: Logs estruturados para debugging
+- **Error Handling**: Páginas de erro personalizadas
+
 ## 📞 Contato
 
 **TH Eletricista - Theobaldo Cordeiro**
@@ -131,5 +194,18 @@ npm run lint       # Verificação de código
 - 🚨 Emergências: 24 horas
 
 ---
+
+## 📋 Checklist de Deploy
+
+- ✅ Dockerfile otimizado para produção
+- ✅ Nginx configurado com headers de segurança
+- ✅ Health check endpoint configurado
+- ✅ Compressão Gzip habilitada
+- ✅ Cache de assets configurado
+- ✅ Build otimizado com code splitting
+- ✅ Docker Compose para desenvolvimento e produção
+- ✅ Configuração Render.yaml incluída
+- ✅ .dockerignore para builds eficientes
+- ✅ Documentação completa de deploy
 
 Desenvolvido com ⚡ para oferecer a melhor experiência ao cliente.
