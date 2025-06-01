@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
 
-## Project info
+# TH Eletricista - Site Profissional
 
-**URL**: https://lovable.dev/projects/be9a8766-1d99-4583-ab8a-9b4597864ffd
+Site profissional para divulgação dos serviços elétricos de Theobaldo Cordeiro (TH Eletricista).
 
-## How can I edit this code?
+## 🚀 Tecnologias Utilizadas
 
-There are several ways of editing your application.
+- **React 18** - Biblioteca JavaScript para construção da interface
+- **TypeScript** - Tipagem estática para maior robustez
+- **Tailwind CSS** - Framework CSS utilitário para estilização
+- **Vite** - Build tool rápida e moderna
+- **Shadcn/ui** - Componentes de interface elegantes e acessíveis
+- **Lucide React** - Ícones modernos e consistentes
+- **Docker** - Containerização para deploy
 
-**Use Lovable**
+## 📋 Funcionalidades
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/be9a8766-1d99-4583-ab8a-9b4597864ffd) and start prompting.
+- ✅ **Landing Page Responsiva** - Design adaptável para todos os dispositivos
+- ✅ **Seção de Serviços** - Apresentação completa dos serviços oferecidos
+- ✅ **Sobre o Profissional** - Informações sobre Theobaldo Cordeiro
+- ✅ **Galeria de Projetos** - Showcase dos trabalhos realizados
+- ✅ **Formulário de Contato** - Solicitação de orçamentos
+- ✅ **Informações de Contato** - Telefone, WhatsApp, e-mail
+- ✅ **Design Profissional** - Visual moderno e confiável
+- ✅ **SEO Otimizado** - Meta tags e estrutura semântica
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Desenvolvimento Local
 
-**Use your preferred IDE**
+### Pré-requisitos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 18+ e npm
+- Git
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Instalação
 
-Follow these steps:
+```bash
+# Clone o repositório
+git clone <URL_DO_REPOSITORIO>
+cd th-eletricista
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Instale as dependências
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O site estará disponível em `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🐳 Docker
 
-**Use GitHub Codespaces**
+### Build e execução com Docker
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+# Build da imagem
+docker build -t th-eletricista .
 
-## What technologies are used for this project?
+# Execução do container
+docker run -p 3000:80 th-eletricista
+```
 
-This project is built with:
+### Usando Docker Compose
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Desenvolvimento
+docker-compose up th-eletricista-dev
 
-## How can I deploy this project?
+# Produção
+docker-compose up th-eletricista
+```
 
-Simply open [Lovable](https://lovable.dev/projects/be9a8766-1d99-4583-ab8a-9b4597864ffd) and click on Share -> Publish.
+## 📦 Deploy
 
-## Can I connect a custom domain to my Lovable project?
+### Build para produção
 
-Yes, you can!
+```bash
+npm run build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Os arquivos de produção serão gerados na pasta `dist/`.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Deploy com Docker
+
+O projeto está configurado para deploy usando Docker com Nginx. O Dockerfile multi-stage otimiza o tamanho da imagem final.
+
+## 🎨 Personalização
+
+### Cores
+
+As cores principais podem ser alteradas no arquivo `tailwind.config.ts`:
+
+- **Primária**: Azul profissional (#1E40AF)
+- **Secundária**: Amarelo/dourado (#F59E0B)
+- **Neutras**: Tons de cinza
+
+### Conteúdo
+
+Para atualizar informações de contato, serviços ou textos:
+
+1. **Informações de Contato**: Edite os componentes `ContactSection.tsx` e `Footer.tsx`
+2. **Serviços**: Modifique o array `services` em `ServicesSection.tsx`
+3. **Sobre**: Atualize o conteúdo em `AboutSection.tsx`
+4. **Projetos**: Edite o array `projects` em `GallerySection.tsx`
+
+## 📱 Responsividade
+
+O site é totalmente responsivo e otimizado para:
+
+- 📱 Mobile (320px+)
+- 📱 Tablet (768px+)
+- 💻 Desktop (1024px+)
+- 🖥️ Wide Desktop (1280px+)
+
+## 🔧 Scripts Disponíveis
+
+```bash
+npm run dev        # Servidor de desenvolvimento
+npm run build      # Build de produção
+npm run preview    # Preview do build
+npm run lint       # Verificação de código
+```
+
+## 📞 Contato
+
+**TH Eletricista - Theobaldo Cordeiro**
+
+- 📱 Telefone/WhatsApp: (11) 99999-9999
+- 📧 E-mail: contato@theletricista.com
+- 📍 Localização: São Paulo - SP
+- 🕒 Horário: Segunda a Sexta, 7h às 18h
+- 🚨 Emergências: 24 horas
+
+---
+
+Desenvolvido com ⚡ para oferecer a melhor experiência ao cliente.
