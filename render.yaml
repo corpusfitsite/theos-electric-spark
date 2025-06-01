@@ -9,5 +9,3 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    buildCommand: docker build -t th-eletricista .
-    startCommand: docker run -p 8080:8080 th-eletricista
