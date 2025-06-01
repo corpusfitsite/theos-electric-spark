@@ -39,7 +39,7 @@ RUN chown -R nginx:nginx /usr/share/nginx/html && \
 USER nginx
 
 # Expose port (Render uses PORT environment variable)
-EXPOSE 8080
+EXPOSE 80
 
 # Use dumb-init for proper signal handling
 ENTRYPOINT ["dumb-init", "--"]
