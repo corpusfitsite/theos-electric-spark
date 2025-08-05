@@ -6,46 +6,32 @@ const GallerySection = () => {
   const projects = [
     {
       category: "Residencial",
-      title: "Instalação Elétrica Completa",
+      title: "Serviços reaçizados",
       description: "Projeto residencial com modernização completa do sistema elétrico",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
       icon: Home
     },
     {
-      category: "Comercial",
-      title: "Quadro de Distribuição",
+      category: "Academico",
+      title: "Projetos faculdade",
       description: "Instalação de quadro elétrico para estabelecimento comercial",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
       icon: Building
     },
     {
       category: "Manutenção",
-      title: "Manutenção Preventiva",
+      title: "Projetos Elétricos",
       description: "Serviço de manutenção e teste de sistemas elétricos",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
       icon: Zap
     },
     {
-      category: "Automação",
-      title: "Sistema de Automação",
+      category: "Certificação",
+      title: "Certificados",
       description: "Implementação de sistema automatizado para residência",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
       icon: Zap
     },
-    {
-      category: "Iluminação",
-      title: "Projeto de Iluminação LED",
-      description: "Modernização com sistema de iluminação LED eficiente",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop",
-      icon: Home
-    },
-    {
-      category: "Infraestrutura",
-      title: "Cabeamento Estruturado",
-      description: "Instalação de infraestrutura elétrica e de dados",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
-      icon: Building
-    }
   ];
 
   return (
