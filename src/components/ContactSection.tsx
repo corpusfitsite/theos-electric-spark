@@ -55,28 +55,28 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Telefone",
-      info: "(11) 99999-9999",
+      info: "81 98986-5734",
       description: "Ligue para agendar seu serviço",
-      action: "tel:+5511999999999"
+      action: "tel:+55 81 98986-5734"
     },
     {
       icon: Smartphone,
       title: "WhatsApp",
-      info: "(11) 99999-9999",
+      info: "81 98986-5734",
       description: "Envie uma mensagem agora",
-      action: "https://wa.me/5511999999999"
+      action: "https://wa.me/558189865734"
     },
     {
       icon: Mail,
       title: "E-mail",
-      info: "contato@theletricista.com",
+      info: "theobaldoalveas@gmail.com",
       description: "Envie sua solicitação por e-mail",
-      action: "mailto:contato@theletricista.com"
+      action: "mailto:theobaldoalveas@gmail.com"
     },
     {
       icon: MapPin,
       title: "Localização",
-      info: "São Paulo - SP",
+      info: "Recife - PE",
       description: "Atendemos toda a região metropolitana",
       action: "#"
     }
@@ -160,7 +160,7 @@ const ContactSection = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="(11) 99999-9999"
+                        placeholder="81 98986-5734"
                         required
                         className="w-full"
                       />
