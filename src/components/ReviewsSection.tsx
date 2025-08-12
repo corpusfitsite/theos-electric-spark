@@ -37,7 +37,7 @@ const ReviewsSection = () => {
     const fetchReviews = async () => {
       try {
         // Chamando a NOSSA API route, não a do Google diretamente
-        const response = await fetch('/api/google-reviews');
+        const response = await fetch('/api');
         if (!response.ok) {
           throw new Error('Falha ao carregar os dados do servidor.');
         }
