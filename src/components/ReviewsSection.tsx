@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/carousel';
 import { Star, MessageSquareQuote } from 'lucide-react';
 // Import completo, apontando para o tipo que definimos no arquivo da API
-import type { Review } from '@/blob/main/src/pages/api';
+import type { Review } from '@/pages/api';
 
 // Componente para renderizar as estrelas de avaliação
 const StarRating = ({ rating }: { rating: number }) => (
@@ -37,7 +37,7 @@ const ReviewsSection = () => {
     const fetchReviews = async () => {
       try {
         // Chamando a NOSSA API route, não a do Google diretamente
-        const response = await fetch('/blob/main/src/pages/api');
+        const response = await fetch('/pages/api');
         if (!response.ok) {
           throw new Error('Falha ao carregar os dados do servidor.');
         }
