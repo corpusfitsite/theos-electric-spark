@@ -1,4 +1,3 @@
-// src/pages/api/google-reviews.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // Definindo um tipo para as avaliações para melhor organização
